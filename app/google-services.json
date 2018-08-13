@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "80516887899",
+    "firebase_url": "https://mangalorexpress-ef3e6.firebaseio.com",
+    "project_id": "mangalorexpress-ef3e6",
+    "storage_bucket": "mangalorexpress-ef3e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80516887899:android:e20daa10c3bf9228",
+        "android_client_info": {
+          "package_name": "mangalorexpress.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80516887899-eq5d8f04dgsllo8c7jttpl6jldsi1nbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzVtgc2ubjz9UTcauEz2xZwIBw_Oo13Gc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
