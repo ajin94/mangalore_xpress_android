@@ -8,10 +8,10 @@ import android.webkit.WebView;
  */
 
 public class WebAppInterface {
-    MainActivity mContext;
+    MainActivityNew mContext;
 
     /** Instantiate the interface and set the context */
-    WebAppInterface(MainActivity c, WebView mweb) {
+    WebAppInterface(MainActivityNew c, WebView mweb) {
         mContext = c;
     }
 

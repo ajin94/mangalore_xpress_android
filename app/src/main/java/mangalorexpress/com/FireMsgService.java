@@ -27,7 +27,7 @@ public class FireMsgService extends FirebaseMessagingService {
             String notificaiton_id = remoteMessage.getData().get("notification_id");
 
             // Create Notification
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivityNew.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("url",url);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, notificaiton_id.hashCode(),
