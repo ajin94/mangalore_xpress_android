@@ -22,7 +22,7 @@
 
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/news"
+                    android:id="@+id/mangalore"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/white"
@@ -38,14 +38,14 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_news" />
+                            app:srcCompat="@drawable/ic_mangalore" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
                             android:textColor="@color/colordeck"
-                            android:text="NEWS"
+                            android:text="MANGALORE"
                             android:layout_marginTop="14dp"
                             android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/stores"
+                    android:id="@+id/karnataka"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
@@ -70,14 +70,14 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_store_ic" />
+                            app:srcCompat="@drawable/karnataka" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
                             android:textColor="@color/colordeck"
-                            android:text="STORES"
+                            android:text="KARNATAKA"
                             android:layout_marginTop="14dp"
                             android:textStyle="bold" />
 
@@ -94,7 +94,7 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/articles"
+                    android:id="@+id/india"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
@@ -110,12 +110,12 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_article_a" />
+                            app:srcCompat="@drawable/ic_india" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ARTICLES"
+                            android:text="INDIA"
                             android:layout_marginTop="14dp"
                             android:textColor="@color/colordeck"
                             android:textStyle="bold" />
@@ -125,7 +125,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/social"
+                    android:id="@+id/international"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
@@ -141,84 +141,14 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_social" />
+                            app:srcCompat="@drawable/ic_world" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SOCIAL"
+                            android:text="INTERNATIONAL"
                             android:layout_marginTop="14dp"
                             android:textColor="@color/colordeck"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/real_estate"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="8dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_real_estate_ic" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="center"
-                            android:textColor="@color/colordeck"
-                            android:layout_marginTop="14dp"
-                            android:text="REAL ESTATE"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/classified"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="8dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_classified" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colordeck"
-                            android:text="CLASSIFIEDS"
-                            android:layout_marginTop="14dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -233,7 +163,7 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/health_care"
+                    android:id="@+id/auto"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
@@ -249,7 +179,7 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_health" />
+                            app:srcCompat="@drawable/ic_automobile" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -257,7 +187,7 @@
                             android:textAlignment="center"
                             android:textColor="@color/colordeck"
                             android:layout_marginTop="14dp"
-                            android:text="HEALTH CARE"
+                            android:text="AUTOMOBILE"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -265,7 +195,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/contact"
+                    android:id="@+id/bollywood"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
@@ -281,14 +211,124 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_contact" />
+                            app:srcCompat="@drawable/bollywood" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colordeck"
+                            android:text="BOLLYWOOD"
+                            android:layout_marginTop="14dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/sports"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            app:srcCompat="@drawable/sports" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="@color/colordeck"
+                            android:layout_marginTop="14dp"
+                            android:text="SPORTS"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/gadgets"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            app:srcCompat="@drawable/gadgets" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colordeck"
                             android:layout_marginTop="14dp"
-                            android:text="CONTACT US"
+                            android:text="GADGETS"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/beauty"
+                    android:layout_width="170dp"
+                    android:layout_height="140dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            app:srcCompat="@drawable/beauty" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colordeck"
+                            android:layout_marginTop="14dp"
+                            android:text="BEAUTY / HEALTH"
                             android:textStyle="bold" />
 
                     </LinearLayout>

@@ -25,6 +25,8 @@ import android.webkit.ValueCallback;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.news.NewsCategoryFragment;
+import com.news.NewsListFragment;
 import com.store.ProductDetailsFragment;
 import com.store.StoreListFragment;
 import com.store.StoreShowFragment;
@@ -53,18 +55,6 @@ public class MainActivityNew extends AppCompatActivity  {
 
     private static final int PERMISSION_REQUEST_CODE = 200;
 
-    private int[] tabIcons = {
-            R.drawable.ic_home_white_24dp,
-            R.drawable.ic_whats_new,
-            R.drawable.ic_store,
-            R.drawable.ic_article,
-            R.drawable.social_wall,
-            R.drawable.real_estate,
-            R.drawable.ic_shopping_basket_white_24dp,
-            R.drawable.ic_action_doctor,
-            R.drawable.ic_contact_us
-    };
-
 
     String feed_url = "http://www.mangalorexpress.com/cards";
     String services_url = "http://www.mangalorexpress.com/services";
@@ -76,6 +66,8 @@ public class MainActivityNew extends AppCompatActivity  {
     String real_estate_url = "http://www.mangalorexpress.com/mangalore-rent-real-estate";
     String article_url = "http://www.mangalorexpress.com/articles";
     String wall_url = "http://www.mangalorexpress.com/wall";
+
+    String news_cats[] = {"Mangalore","Karnataka","India","International","Auto","Bollywood","Sports","Gadgets","Beauty"};
 
 
     @Override
@@ -124,6 +116,20 @@ public class MainActivityNew extends AppCompatActivity  {
         fragmentManager.beginTransaction().replace(R.id.frame, fragment).commit();
     }
 
+
+    public void show_news(int index){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragment = new NewsListFragment();
+        String backStateName = "NewsListFragment";
+        Bundle bundle = new Bundle();
+        bundle.putString("category",news_cats[index-1]);
+        fragment.setArguments(bundle);
+        fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .replace(R.id.frame, fragment)
+                .addToBackStack(backStateName)
+                .commit();
+    }
+
     public  void show_page(int index){
         fragment = new OptionsFragment();
         Bundle bundle = null;
@@ -131,10 +137,8 @@ public class MainActivityNew extends AppCompatActivity  {
 
         switch (index){
             case 1:
-                bundle = new Bundle();
-                bundle.putString("page_url", feed_url);
                 back_stack_name = "FEED";
-                fragment = new ContentFragment();
+                fragment = new NewsCategoryFragment();
                 fragment.setArguments(bundle);
                 toolbar.setTitle("NEWS");
                 break;

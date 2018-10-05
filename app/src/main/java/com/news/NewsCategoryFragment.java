@@ -1,4 +1,4 @@
-package mangalorexpress.com;
+package com.news;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -10,16 +10,19 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import mangalorexpress.com.MainActivityNew;
+import mangalorexpress.com.R;
+
 /**
  * Created by akhil on 30/9/18.
  */
 
-public class OptionsFragment extends Fragment  {
+public class NewsCategoryFragment extends Fragment  {
 
     MainActivityNew main_activity;
 
 
-    public OptionsFragment() {
+    public NewsCategoryFragment() {
         // Required empty public constructor
     }
 
@@ -33,75 +36,81 @@ public class OptionsFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.options_fragment, container, false);
+        View view = inflater.inflate(R.layout.news_category_fragment, container, false);
 
 
-        CardView news = (CardView) view.findViewById(R.id.news);
-        CardView store = (CardView) view.findViewById(R.id.stores);
-        CardView articles = (CardView) view.findViewById(R.id.articles);
-        CardView social = (CardView) view.findViewById(R.id.social);
-        CardView real_estate = (CardView) view.findViewById(R.id.real_estate);
-        CardView classified = (CardView) view.findViewById(R.id.classified);
-        CardView health = (CardView) view.findViewById(R.id.health_care);
-        CardView contact = (CardView) view.findViewById(R.id.contact);
+        CardView mangalore = (CardView) view.findViewById(R.id.mangalore);
+        CardView karnataka = (CardView) view.findViewById(R.id.karnataka);
+        CardView india = (CardView) view.findViewById(R.id.india);
+        CardView international = (CardView) view.findViewById(R.id.international);
+        CardView automobile = (CardView) view.findViewById(R.id.auto);
+        CardView bollywood = (CardView) view.findViewById(R.id.bollywood);
+        CardView sports = (CardView) view.findViewById(R.id.sports);
+        CardView gadgets = (CardView) view.findViewById(R.id.gadgets);
+        CardView beauty = (CardView) view.findViewById(R.id.beauty);
 
-        news.setOnClickListener(new View.OnClickListener() {
+        mangalore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(1);
+                main_activity.show_news(1);
             }
         });
 
-        store.setOnClickListener(new View.OnClickListener() {
+        karnataka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(2);
+                main_activity.show_news(2);
             }
         });
 
-        articles.setOnClickListener(new View.OnClickListener() {
+        india.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(3);
+                main_activity.show_news(3);
             }
         });
 
-        social.setOnClickListener(new View.OnClickListener() {
+        international.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(4);
+                main_activity.show_news(4);
             }
         });
 
-        real_estate.setOnClickListener(new View.OnClickListener() {
+        automobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(5);
+                main_activity.show_news(5);
             }
         });
 
-        classified.setOnClickListener(new View.OnClickListener() {
+        bollywood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(6);
+                main_activity.show_news(6);
             }
         });
 
-        health.setOnClickListener(new View.OnClickListener() {
+        sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(7);
+                main_activity.show_news(7);
             }
         });
 
-        contact.setOnClickListener(new View.OnClickListener() {
+        gadgets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.show_page(8);
+                main_activity.show_news(8);
             }
         });
 
-
+        beauty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                main_activity.show_news(9);
+            }
+        });
 
         return view;
     }

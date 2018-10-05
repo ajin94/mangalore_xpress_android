@@ -42,8 +42,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_news"/>
 
                     <TextView
@@ -51,7 +51,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="NEWS"/>
 
                 </LinearLayout>
@@ -71,8 +72,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_store_ic"/>
 
                     <TextView
@@ -80,7 +81,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="STORES"/>
 
                 </LinearLayout>
@@ -100,8 +102,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_article_a"/>
 
                     <TextView
@@ -109,7 +111,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="ARTICLES"/>
 
                 </LinearLayout>
@@ -129,8 +132,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_social"/>
 
                     <TextView
@@ -138,7 +141,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="SOCIAL"/>
 
                 </LinearLayout>
@@ -158,16 +162,17 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/ic_real_estate"/>
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/ic_real_estate_ic"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="REAL ESTATE"/>
 
                 </LinearLayout>
@@ -187,8 +192,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_classified"/>
 
                     <TextView
@@ -196,7 +201,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="CLASSIFIEDS"/>
 
                 </LinearLayout>
@@ -216,8 +222,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_health"/>
 
                     <TextView
@@ -225,7 +231,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="HEALTH CARE"/>
 
                 </LinearLayout>
@@ -245,8 +252,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:srcCompat="@drawable/ic_contact"/>
 
                     <TextView
@@ -254,7 +261,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="11dp"
                         android:text="CONTACT US"/>
 
                 </LinearLayout>

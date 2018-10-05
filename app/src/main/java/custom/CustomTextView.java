@@ -38,16 +38,16 @@ public class CustomTextView extends TextView {
     private void init(AttributeSet attrs) {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CustomTextView);
-            String fontName = a.getString(R.styleable.CustomTextView_font);
-
-            try {
-                if (fontName != null) {
-                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName);
-                    setTypeface(myTypeface);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            String fontName = a.getString(R.styleable.CustomTextView_font);
+//
+//            try {
+//                if (fontName != null) {
+//                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName);
+//                    setTypeface(myTypeface);
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
 
             a.recycle();
         }
