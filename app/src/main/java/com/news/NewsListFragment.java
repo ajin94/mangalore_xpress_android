@@ -44,6 +44,7 @@ public class NewsListFragment extends Fragment  {
     private  String category;
     private EndlessRecyclerViewScrollListener scrollListener;
     private int page_no = 1;
+    private boolean is_article = false;
     public NewsListFragment() {
         // Required empty public constructor
     }
@@ -53,6 +54,10 @@ public class NewsListFragment extends Fragment  {
         super.onCreate(savedInstanceState);
         main_activity = (MainActivityNew) getActivity();
         category = getArguments().getString("category");
+        if(getArguments().getBoolean("is_article")){
+            is_article = true;
+        }
+
     }
 
     @Override
@@ -88,7 +93,9 @@ public class NewsListFragment extends Fragment  {
 
     public void download_stores(final boolean show_progress){
         String url = "http://www.mangalorexpress.com/cards.json?category="+category+"&page="+page_no;
-
+        if(is_article){
+            url = "http://www.mangalorexpress.com/feeds.json?type=article"+"&page="+page_no;
+        }
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -106,8 +113,12 @@ public class NewsListFragment extends Fragment  {
                                 }else {
                                     s.setImage_url(store.getString("image_url"));
                                 }
+                                if(store.has("pic_url")){
+                                    s.setImage_url(store.getString("pic_url"));
+                                }
                                 s.setSource(store.getString("news_source"));
                                 s.setSource_url(store.getString("src_url"));
+                                s.setArticle(store.getBoolean("is_article"));
                                 news.add(s);
                             }
 

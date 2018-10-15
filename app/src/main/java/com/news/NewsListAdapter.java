@@ -60,13 +60,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
     @Override
     public void onBindViewHolder(NewsListAdapter.MyViewHolder holder, int position) {
         final News product = product_list.get(position);
+        holder.img.layout(0,0,0,0);
         holder.title.setText(product.getTitle());
         holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>","")));
         if(product.getImage_url().equals("")){
             holder.img.setVisibility(View.GONE);
         }else {
             Glide.with(mContext).load(product.getImage_url())
-                    .crossFade()
+                    .fitCenter().placeholder(R.drawable.gl_thumb)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
         }

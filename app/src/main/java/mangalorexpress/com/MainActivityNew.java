@@ -117,11 +117,27 @@ public class MainActivityNew extends AppCompatActivity  {
     }
 
 
+    public void show_article(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragment = new NewsListFragment();
+        String backStateName = "ArticleListFragment";
+        Bundle bundle = new Bundle();
+        toolbar.setTitle("ARTICLES");
+        bundle.putBoolean("is_article",true);
+        fragment.setArguments(bundle);
+        fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .replace(R.id.frame, fragment)
+                .addToBackStack(backStateName)
+                .commit();
+    }
+
+
     public void show_news(int index){
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragment = new NewsListFragment();
         String backStateName = "NewsListFragment";
         Bundle bundle = new Bundle();
+        toolbar.setTitle((news_cats[index-1]).toUpperCase()+" NEWS");
         bundle.putString("category",news_cats[index-1]);
         fragment.setArguments(bundle);
         fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -150,10 +166,12 @@ public class MainActivityNew extends AppCompatActivity  {
                 break;
             case 3:
                 bundle = new Bundle();
+                back_stack_name = "ArticleListFragment";
                 bundle.putString("page_url", article_url);
-                fragment = new ContentFragment();
-                fragment.setArguments(bundle);
+                fragment = new NewsListFragment();
                 toolbar.setTitle("ARTICLES");
+                bundle.putBoolean("is_article",true);
+                fragment.setArguments(bundle);
                 break;
             case 4:
                 bundle = new Bundle();

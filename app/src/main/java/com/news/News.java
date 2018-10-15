@@ -2,7 +2,24 @@ package com.news;
 
 public class News {
     private int id;
-    private String title, description,image_url,source,category,source_url;
+    private String title, description,image_url,source,category,source_url,details;
+    private boolean isArticle;
+
+    public boolean isArticle() {
+        return isArticle;
+    }
+
+    public void setArticle(boolean article) {
+        isArticle = article;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
 
     public String getSource_url() {
         return source_url;
