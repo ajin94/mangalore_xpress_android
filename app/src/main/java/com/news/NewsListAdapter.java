@@ -84,10 +84,21 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder mholder, int position) {
         final News product = product_list.get(position);
+<<<<<<< HEAD
         if(product.is_ad()){
             AdViewHolder holder = (AdViewHolder) mholder;
             Glide.with(mContext).load(product.getImage_url())
                     .fitCenter()
+=======
+        holder.img.layout(0,0,0,0);
+        holder.title.setText(product.getTitle());
+        holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>","")));
+        if(product.getImage_url().equals("")){
+            holder.img.setVisibility(View.GONE);
+        }else {
+            Glide.with(mContext).load(product.getImage_url())
+                    .fitCenter().placeholder(R.drawable.gl_thumb)
+>>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
         }else {

@@ -44,7 +44,11 @@ public class NewsListFragment extends Fragment {
     private String category;
     private EndlessRecyclerViewScrollListener scrollListener;
     private int page_no = 1;
+<<<<<<< HEAD
 
+=======
+    private boolean is_article = false;
+>>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
     public NewsListFragment() {
         // Required empty public constructor
     }
@@ -54,6 +58,10 @@ public class NewsListFragment extends Fragment {
         super.onCreate(savedInstanceState);
         main_activity = (MainActivityNew) getActivity();
         category = getArguments().getString("category");
+        if(getArguments().getBoolean("is_article")){
+            is_article = true;
+        }
+
     }
 
     @Override
@@ -87,9 +95,17 @@ public class NewsListFragment extends Fragment {
         return view;
     }
 
+<<<<<<< HEAD
     public void download_stores(final boolean show_progress) {
         String url = "http://www.mangalorexpress.com/cards.json?category=" + category + "&page=" + page_no;
 
+=======
+    public void download_stores(final boolean show_progress){
+        String url = "http://www.mangalorexpress.com/cards.json?category="+category+"&page="+page_no;
+        if(is_article){
+            url = "http://www.mangalorexpress.com/feeds.json?type=article"+"&page="+page_no;
+        }
+>>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -107,8 +123,12 @@ public class NewsListFragment extends Fragment {
                                 } else {
                                     s.setImage_url(store.getString("image_url"));
                                 }
+                                if(store.has("pic_url")){
+                                    s.setImage_url(store.getString("pic_url"));
+                                }
                                 s.setSource(store.getString("news_source"));
                                 s.setSource_url(store.getString("src_url"));
+                                s.setArticle(store.getBoolean("is_article"));
                                 news.add(s);
 
                                 if (i > 0 && i % 4 == 0) {
