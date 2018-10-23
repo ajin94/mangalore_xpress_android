@@ -69,6 +69,7 @@ public class StoreShowFragment extends Fragment {
         TextView name = (TextView) view.findViewById(R.id.name);
         TextView desc = (TextView) view.findViewById(R.id.desc);
         ImageView logo = (ImageView) view.findViewById(R.id.logo);
+
         name.setText(store_name);
         desc.setText(store_description);
         Glide.with(getContext()).load(store_logo)
@@ -79,6 +80,8 @@ public class StoreShowFragment extends Fragment {
         download_products(true);
         return  view;
     }
+
+
 
     public void download_products(final boolean show_progress){
         String url = "http://www.mangalorexpress.com/stores/"+store_id+"/products.json";
@@ -164,7 +167,7 @@ public class StoreShowFragment extends Fragment {
                     }
 
                     public void onAnimationEnd(Animation animation) {
-                        getView().setLayerType(View.LAYER_TYPE_NONE, null);
+//                        getView().setLayerType(View.LAYER_TYPE_NONE, null);
                     }
 
                     @Override

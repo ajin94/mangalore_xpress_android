@@ -30,6 +30,7 @@ public class NewsCategoryFragment extends Fragment  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         main_activity = (MainActivityNew) getActivity();
+        main_activity.download_ads();
     }
 
     @Override

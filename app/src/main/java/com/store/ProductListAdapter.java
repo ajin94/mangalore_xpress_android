@@ -59,7 +59,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         final Product product = product_list.get(position);
         holder.name.setText(product.getName());
         DecimalFormat IndianCurrencyFormat = new DecimalFormat("##,##,###");
-        holder.price.setText("Rs."+IndianCurrencyFormat.format(product.getPrice()));
+        holder.price.setText("Rs. "+IndianCurrencyFormat.format(product.getPrice()));
         Glide.with(mContext).load(product.getProduct_image())
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

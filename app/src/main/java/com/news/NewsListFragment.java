@@ -20,20 +20,20 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.store.Store;
-import com.store.StoreListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import custom.EndlessRecyclerViewScrollListener;
 import custom.RequestQueueSingleton;
 import mangalorexpress.com.MainActivityNew;
+import mangalorexpress.com.MyApplication;
 import mangalorexpress.com.R;
 
-public class NewsListFragment extends Fragment  {
+public class NewsListFragment extends Fragment {
 
     MainActivityNew main_activity;
 
@@ -41,9 +41,10 @@ public class NewsListFragment extends Fragment  {
     private NewsListAdapter mAdapter;
     private ArrayList<News> news = new ArrayList<>();
     private SwipeRefreshLayout swipeRefreshLayout;
-    private  String category;
+    private String category;
     private EndlessRecyclerViewScrollListener scrollListener;
     private int page_no = 1;
+
     public NewsListFragment() {
         // Required empty public constructor
     }
@@ -69,7 +70,7 @@ public class NewsListFragment extends Fragment  {
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to the bottom of the list
-                page_no = page_no+1;
+                page_no = page_no + 1;
                 download_stores(true);
             }
         };
@@ -83,11 +84,11 @@ public class NewsListFragment extends Fragment  {
         });
 
         download_stores(true);
-        return  view;
+        return view;
     }
 
-    public void download_stores(final boolean show_progress){
-        String url = "http://www.mangalorexpress.com/cards.json?category="+category+"&page="+page_no;
+    public void download_stores(final boolean show_progress) {
+        String url = "http://www.mangalorexpress.com/cards.json?category=" + category + "&page=" + page_no;
 
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
@@ -95,30 +96,38 @@ public class NewsListFragment extends Fragment  {
                     public void onResponse(JSONArray response) {
                         try {
 
-                            for(int i=0;i<response.length();i++){
+                            for (int i = 0; i < response.length(); i++) {
                                 JSONObject store = response.getJSONObject(i);
                                 News s = new News();
                                 s.setCategory(category);
                                 s.setTitle(store.getString("title"));
-                                s.setDescription(new String(Base64.decode(store.getString("desc"),Base64.DEFAULT)));
-                                if(store.isNull("image_url")){
+                                s.setDescription(new String(Base64.decode(store.getString("desc"), Base64.DEFAULT)));
+                                if (store.isNull("image_url")) {
                                     s.setImage_url("");
-                                }else {
+                                } else {
                                     s.setImage_url(store.getString("image_url"));
                                 }
                                 s.setSource(store.getString("news_source"));
                                 s.setSource_url(store.getString("src_url"));
                                 news.add(s);
+
+                                if (i > 0 && i % 4 == 0) {
+                                    News ad = new News();
+                                    System.out.println("AD MI "+MyApplication.ad_imgs.length);
+                                    ad.setImage_url(MyApplication.ad_imgs[new Random().nextInt(MyApplication.ad_imgs.length)]);
+                                    ad.set_ad(true);
+                                    news.add(ad);
+                                }
                             }
 
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        if(show_progress) {
+                        if (show_progress) {
                             swipeRefreshLayout.setRefreshing(false);
-                            if(page_no>1){
+                            if (page_no > 1) {
                                 mAdapter.notifyDataSetChanged();
-                            }else {
+                            } else {
                                 show_stores();
                             }
                         }
@@ -127,23 +136,23 @@ public class NewsListFragment extends Fragment  {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        if(show_progress) {
-                            Toast.makeText(getContext(),"Something went wrong!",Toast.LENGTH_SHORT).show();
+                        if (show_progress) {
+                            Toast.makeText(getContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
                             swipeRefreshLayout.setRefreshing(false);
                         }
                     }
                 }
         );
-        if(show_progress) {
+        if (show_progress) {
             swipeRefreshLayout.setRefreshing(true);
         }
         jsonObjectRequest.setTag("Download course");
         RequestQueueSingleton.getInstance(getContext()).getRequestQueue().add(jsonObjectRequest);
     }
 
-    public  void show_stores(){
-        Log.d("Akhil","NEWS SIZE "+news.size());
-        mAdapter = new NewsListAdapter(getContext(),news);
+    public void show_stores() {
+        Log.d("Akhil", "NEWS SIZE " + news.size());
+        mAdapter = new NewsListAdapter(getContext(), news);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
     }
@@ -168,7 +177,7 @@ public class NewsListFragment extends Fragment  {
                     }
 
                     public void onAnimationEnd(Animation animation) {
-                        getView().setLayerType(View.LAYER_TYPE_NONE, null);
+
                     }
 
                     @Override

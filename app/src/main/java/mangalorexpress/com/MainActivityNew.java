@@ -25,16 +25,25 @@ import android.webkit.ValueCallback;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.news.NewsCategoryFragment;
 import com.news.NewsListFragment;
 import com.store.ProductDetailsFragment;
 import com.store.StoreListFragment;
 import com.store.StoreShowFragment;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import custom.RequestQueueSingleton;
 
 /**
  * Created by akhil on 30/9/18.
@@ -447,6 +456,39 @@ public class MainActivityNew extends AppCompatActivity  {
                 .setNegativeButton("No", null)
                 .show();
 
+    }
+
+    public void download_ads(){
+        String url = "http://www.mangalorexpress.com/ads.json";
+
+
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            MyApplication.ad_imgs = new String[response.length()];
+                            Log.d("Ahkil","Downloading Ad "+response.toString());
+                            for(int i=0;i<response.length();i++){
+                                JSONObject j = response.getJSONObject(i);
+                               MyApplication.ad_imgs[i] = j.getString("image_url");
+                            }
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Ahkil","Downloading Ad error");
+                    }
+                }
+        );
+        jsonObjectRequest.setTag("Download ad");
+        RequestQueueSingleton.getInstance(getApplicationContext()).getRequestQueue().add(jsonObjectRequest);
     }
 
 }
