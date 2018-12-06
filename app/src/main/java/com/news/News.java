@@ -2,6 +2,15 @@ package com.news;
 
 public class News {
     private int id;
+    private boolean is_ad=false;
+
+    public void set_ad(boolean is_ad){
+        this.is_ad = is_ad;
+    }
+    public boolean is_ad(){
+        return is_ad;
+    }
+
     private String title, description,image_url,source,category,source_url,details;
     private boolean isArticle;
 

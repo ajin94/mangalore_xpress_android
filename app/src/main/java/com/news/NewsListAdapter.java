@@ -1,7 +1,7 @@
 package com.news;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -12,16 +12,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.store.Product;
-import com.store.ProductListAdapter;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
-import mangalorexpress.com.MainActivityNew;
+import custom.WebDialog;
 import mangalorexpress.com.R;
 
-public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyViewHolder> {
+public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<News> product_list;
     private Context mContext;
@@ -43,6 +40,25 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
         }
     }
 
+    public class AdViewHolder extends RecyclerView.ViewHolder {
+
+        public ImageView img;
+
+        public AdViewHolder(View view) {
+            super(view);
+            img = (ImageView) view.findViewById(R.id.img);
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        if(product_list.get(position).is_ad()){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
 
     public NewsListAdapter(Context mContext,List<News> product_list) {
         this.product_list = product_list;
@@ -50,16 +66,30 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
     }
 
     @Override
-    public NewsListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.news_row, parent, false);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        return new NewsListAdapter.MyViewHolder(itemView);
+        if(viewType == 0){
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.ad_image, parent, false);
+
+            return new NewsListAdapter.AdViewHolder(itemView);
+        }else {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.news_row, parent, false);
+
+            return new NewsListAdapter.MyViewHolder(itemView);
+        }
     }
 
     @Override
-    public void onBindViewHolder(NewsListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder mholder, int position) {
         final News product = product_list.get(position);
+<<<<<<< HEAD
+        if(product.is_ad()){
+            AdViewHolder holder = (AdViewHolder) mholder;
+            Glide.with(mContext).load(product.getImage_url())
+                    .fitCenter()
+=======
         holder.img.layout(0,0,0,0);
         holder.title.setText(product.getTitle());
         holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>","")));
@@ -68,10 +98,31 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
         }else {
             Glide.with(mContext).load(product.getImage_url())
                     .fitCenter().placeholder(R.drawable.gl_thumb)
+>>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+        }else {
+            MyViewHolder holder = (MyViewHolder) mholder;
+            holder.title.setText(product.getTitle());
+            holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>", "")));
+            if (product.getImage_url().equals("")) {
+                holder.img.setVisibility(View.GONE);
+            } else {
+                Glide.with(mContext).load(product.getImage_url())
+                        .fitCenter()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(holder.img);
+            }
+            holder.read_more.setText("Read More @ " + product.getSource());
+            holder.read_more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    WebDialog w = new WebDialog(mContext,product.getSource_url());
+                    w.show();
+                }
+            });
+            holder.read_more.setPaintFlags(holder.read_more.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         }
-        holder.read_more.setText("READ MORE @ "+product.getSource());
     }
 
     @Override

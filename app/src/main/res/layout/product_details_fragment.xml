@@ -10,6 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -17,86 +18,87 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/white"
-                android:layout_margin="5dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:background="#fff"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <ImageView
+                        android:id="@+id/logo"
                         android:layout_width="wrap_content"
-                        android:layout_height="350dp"
-                        android:id="@+id/logo"/>
-
+                        android:layout_height="350dp" />
 
 
                     <TextView
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:textColor="#222"
-                        android:textStyle="bold"
                         android:textSize="17dp"
-                        android:id="@+id/name"/>
+                        android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#333"
                         android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:id="@+id/price"
-                        android:textColor="#333"/>
+                        android:textStyle="bold" />
 
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/grey_bordered"
+                        android:layout_marginBottom="8dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp">
+                        android:background="@drawable/grey_bordered">
+
                         <ScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            >
+                            android:layout_height="wrap_content">
+
                             <LinearLayout
+                                android:id="@+id/product_imgs"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:padding="5dp"
-                                android:id="@+id/product_imgs"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:padding="5dp">
 
                             </LinearLayout>
                         </ScrollView>
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/desc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:id="@+id/desc"
+                        android:layout_marginTop="5dp"
                         android:gravity="left"
-                        android:textColor="#555"/>
-
+                        android:textColor="#555" />
 
 
                     <Button
+                        android:id="@+id/enquiry"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:id="@+id/enquiry"
-                        android:text="ENQUIRE NOW"/>
+                        android:layout_marginTop="5dp"
+                        android:theme="@style/MyButton"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:text="ENQUIRE NOW" />
 
                 </LinearLayout>
 

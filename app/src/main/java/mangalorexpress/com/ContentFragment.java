@@ -51,14 +51,14 @@ public class ContentFragment extends Fragment {
             page_url = getArguments().getString("page_url");
         }
 
-        Log.d("Akhil",page_url);
+        Log.d("Akhil", page_url);
     }
 
-    public boolean canGoBack(){
+    public boolean canGoBack() {
         return webView.canGoBack();
     }
 
-    public void goBack(){
+    public void goBack() {
         webView.goBack();
     }
 
@@ -177,13 +177,12 @@ public class ContentFragment extends Fragment {
                 }
         );
 
-        if(temp_url!=null) {
+        if (temp_url != null) {
             webView.loadUrl(temp_url);
             temp_url = null;
-        }
-        else if(page_url==null) {
+        } else if (page_url == null) {
             webView.loadUrl("http://www.mangalorexpress.com/cards");
-        }else{
+        } else {
             webView.loadUrl(page_url);
         }
 
@@ -211,7 +210,7 @@ public class ContentFragment extends Fragment {
                     }
 
                     public void onAnimationEnd(Animation animation) {
-                        getView().setLayerType(View.LAYER_TYPE_NONE, null);
+
                     }
 
                     @Override
@@ -226,7 +225,7 @@ public class ContentFragment extends Fragment {
         return animation;
     }
 
-    public  void show_url(String url){
+    public void show_url(String url) {
         this.page_url = url;
     }
 

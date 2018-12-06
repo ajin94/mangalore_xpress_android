@@ -9,6 +9,8 @@ import com.facebook.drawee.backends.pipeline.Fresco;
  */
 
 public class MyApplication extends Application {
+
+    public static String[] ad_imgs = new String[0];
     @Override
     public void onCreate() {
         super.onCreate();
