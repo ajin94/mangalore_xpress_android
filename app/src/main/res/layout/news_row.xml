@@ -8,7 +8,7 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="#fff"
         android:layout_margin="10dp"
         android:layout_height="wrap_content"
         >
@@ -41,24 +41,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="0dp"
                 android:layout_marginRight="10dp"
                 android:paddingTop="5dp"
                 android:textColor="#444"
                 android:textSize="14dp"
                 android:id="@+id/description"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
-                android:id="@+id/read_more"
-                android:textStyle=""
-                android:textColor="#FF8969F1"
-                />
+                android:layout_marginTop="-20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/read_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:theme="@style/MyButton"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:text="ENQUIRE NOW" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 

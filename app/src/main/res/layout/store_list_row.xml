@@ -12,7 +12,7 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="#fff"
         android:layout_margin="5dp"
 
         android:layout_height="wrap_content"

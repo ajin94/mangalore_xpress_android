@@ -44,11 +44,7 @@ public class NewsListFragment extends Fragment {
     private String category;
     private EndlessRecyclerViewScrollListener scrollListener;
     private int page_no = 1;
-<<<<<<< HEAD
-
-=======
     private boolean is_article = false;
->>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
     public NewsListFragment() {
         // Required empty public constructor
     }
@@ -87,6 +83,7 @@ public class NewsListFragment extends Fragment {
             @Override
             public void onRefresh() {
                 page_no = 1;
+                news = new ArrayList<>();
                 download_stores(true);
             }
         });
@@ -95,22 +92,23 @@ public class NewsListFragment extends Fragment {
         return view;
     }
 
-<<<<<<< HEAD
-    public void download_stores(final boolean show_progress) {
-        String url = "http://www.mangalorexpress.com/cards.json?category=" + category + "&page=" + page_no;
-
-=======
     public void download_stores(final boolean show_progress){
+
         String url = "http://www.mangalorexpress.com/cards.json?category="+category+"&page="+page_no;
         if(is_article){
-            url = "http://www.mangalorexpress.com/feeds.json?type=article"+"&page="+page_no;
+            url = "http://www.mangalorexpress.com/feeds.json?type=article&page="+page_no;
         }
->>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
+        Log.d("Akhil",url);
+
         JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         try {
+
+                            if(response.length()==0){
+                                page_no = page_no - 1;
+                            }
 
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject store = response.getJSONObject(i);
@@ -129,6 +127,9 @@ public class NewsListFragment extends Fragment {
                                 s.setSource(store.getString("news_source"));
                                 s.setSource_url(store.getString("src_url"));
                                 s.setArticle(store.getBoolean("is_article"));
+                                if(s.isArticle()){
+                                    s.setDetails(new String(Base64.decode(store.getString("detl"), Base64.DEFAULT)));
+                                }
                                 news.add(s);
 
                                 if (i > 0 && i % 4 == 0) {

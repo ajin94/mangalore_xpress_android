@@ -25,7 +25,7 @@
                     android:id="@+id/news"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_height="140dp"
                     android:layout_margin="8dp">
 
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -98,7 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -167,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -199,7 +199,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -269,7 +269,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -281,14 +281,14 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            app:srcCompat="@drawable/ic_contact" />
+                            app:srcCompat="@drawable/ic_qa" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colordeck"
                             android:layout_marginTop="14dp"
-                            android:text="CONTACT US"
+                            android:text="QUIZ"
                             android:textStyle="bold" />
 
                     </LinearLayout>

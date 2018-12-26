@@ -1,21 +1,25 @@
 package com.news;
 
 import android.content.Context;
-import android.graphics.Paint;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.article.ShowArticleFragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
 import custom.WebDialog;
+import mangalorexpress.com.MainActivityNew;
 import mangalorexpress.com.R;
 
 public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -27,7 +31,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public TextView title;
         public ImageView img;
         public TextView description;
-        public TextView read_more;
+        public Button read_more;
 
 
 
@@ -36,7 +40,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             title = (TextView) view.findViewById(R.id.title);
             img = (ImageView) view.findViewById(R.id.news_thumb);
             description = (TextView) view.findViewById(R.id.description);
-            read_more = (TextView) view.findViewById(R.id.read_more);
+            read_more = (Button) view.findViewById(R.id.read_more);
         }
     }
 
@@ -84,25 +88,17 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder mholder, int position) {
         final News product = product_list.get(position);
-<<<<<<< HEAD
+
         if(product.is_ad()){
             AdViewHolder holder = (AdViewHolder) mholder;
+            holder.img.layout(0,0,0,0);
             Glide.with(mContext).load(product.getImage_url())
                     .fitCenter()
-=======
-        holder.img.layout(0,0,0,0);
-        holder.title.setText(product.getTitle());
-        holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>","")));
-        if(product.getImage_url().equals("")){
-            holder.img.setVisibility(View.GONE);
-        }else {
-            Glide.with(mContext).load(product.getImage_url())
-                    .fitCenter().placeholder(R.drawable.gl_thumb)
->>>>>>> a37d21af4b949b58c612be5bcaeec56e91c67fd3
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
         }else {
             MyViewHolder holder = (MyViewHolder) mholder;
+            holder.img.layout(0,0,0,0);
             holder.title.setText(product.getTitle());
             holder.description.setText(Html.fromHtml(product.getDescription().replaceAll("<br>", "")));
             if (product.getImage_url().equals("")) {
@@ -113,15 +109,33 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(holder.img);
             }
-            holder.read_more.setText("Read More @ " + product.getSource());
-            holder.read_more.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    WebDialog w = new WebDialog(mContext,product.getSource_url());
-                    w.show();
-                }
-            });
-            holder.read_more.setPaintFlags(holder.read_more.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            if(product.isArticle()){
+                holder.read_more.setText("READ FULL ARTICLE");
+                holder.read_more.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Bundle bundle = new Bundle();
+                        String back_stack_name = "ArticleShowFragment";
+                        bundle.putString("title", product.getTitle());
+                        bundle.putString("image_path",product.getImage_url());
+                        bundle.putString("description",product.getDetails());
+                        ShowArticleFragment fragment = new ShowArticleFragment();
+                        fragment.setArguments(bundle);
+                        FragmentManager fragmentManager = ((MainActivityNew)mContext).getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out).replace(R.id.frame, fragment).addToBackStack(back_stack_name).commit();
+                    }
+                });
+            }else {
+                holder.read_more.setText("Read More @ " + product.getSource());
+                holder.read_more.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        WebDialog w = new WebDialog(mContext, product.getSource_url());
+                        w.show();
+                    }
+                });
+            }
+
         }
     }
 

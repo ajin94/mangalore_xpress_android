@@ -31,6 +31,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.news.NewsCategoryFragment;
 import com.news.NewsListFragment;
+import com.quiz.HomeScreen;
 import com.store.ProductDetailsFragment;
 import com.store.StoreListFragment;
 import com.store.StoreShowFragment;
@@ -211,11 +212,12 @@ public class MainActivityNew extends AppCompatActivity  {
                 toolbar.setTitle("HEALTH CARE");
                 break;
             case 8:
-                bundle = new Bundle();
-                bundle.putString("page_url", contact_us_url);
-                fragment = new ContentFragment();
-                fragment.setArguments(bundle);
-                toolbar.setTitle("CONTACT US");
+//                bundle = new Bundle();
+//                bundle.putString("page_url", contact_us_url);
+//                fragment = new ContentFragment();
+//                fragment.setArguments(bundle);
+//                toolbar.setTitle("CONTACT US");
+                show_quiz();
                 break;
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -225,6 +227,11 @@ public class MainActivityNew extends AppCompatActivity  {
         }else {
             fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out).replace(R.id.frame, fragment).addToBackStack(back_stack_name).commit();
         }
+    }
+
+    public void show_quiz(){
+        Intent intent = new Intent(MainActivityNew.this,HomeScreen.class);
+        startActivity(intent);
     }
 
 

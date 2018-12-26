@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "mangalorexpress.com"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 10
+        versionCode 11
         versionName "1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true

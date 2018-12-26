@@ -25,7 +25,7 @@
                     android:id="@+id/mangalore"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_height="140dp"
                     android:layout_margin="8dp">
 
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -98,7 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -167,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -199,7 +199,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -269,7 +269,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout
@@ -309,7 +309,7 @@
                     android:id="@+id/beauty"
                     android:layout_width="170dp"
                     android:layout_height="140dp"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="#fff"
                     android:layout_margin="8dp">
 
                     <LinearLayout

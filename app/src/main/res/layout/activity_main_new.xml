@@ -254,7 +254,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_contact"/>
+                        app:srcCompat="@drawable/ic_qa"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -263,7 +263,7 @@
                         android:textStyle="bold"
                         android:textSize="12dp"
                         android:layout_marginTop="11dp"
-                        android:text="CONTACT US"/>
+                        android:text="QUIZ"/>
 
                 </LinearLayout>
 

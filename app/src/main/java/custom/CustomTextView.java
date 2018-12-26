@@ -42,7 +42,7 @@ public class CustomTextView extends TextView {
 //
 //            try {
 //                if (fontName != null) {
-//                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName);
+//                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "font/" + fontName);
 //                    setTypeface(myTypeface);
 //                }
 //            } catch (Exception e) {
