@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/wrongAns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/wrongans"
+<<<<<<< HEAD
+        android:textColor="#fff"
+=======
+        android:textColor="@color/white"
+>>>>>>> 020ef502a5080d9eb6f6e059d9b587ac3b70c1a6
+        android:textSize="30sp" />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/wrongans" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+<<<<<<< HEAD
+        android:text="@string/play_again" />
+=======
+        android:text="@string/play_again"
+        android:background="@color/lightGreen" />
+>>>>>>> 020ef502a5080d9eb6f6e059d9b587ac3b70c1a6
+</LinearLayout>
